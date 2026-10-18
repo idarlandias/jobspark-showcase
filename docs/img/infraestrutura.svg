@@ -148,11 +148,11 @@
 
     <rect x="214" y="746" width="150" height="62" rx="10" class="box"/>
     <text x="228" y="770" class="t" font-size="13">2. Push</text>
-    <text x="228" y="790" class="s">73 testes + tipos</text>
+    <text x="228" y="790" class="s">82 testes + tipos</text>
 
     <rect x="388" y="746" width="150" height="62" rx="10" class="box"/>
     <text x="402" y="770" class="t" font-size="13">3. Banco de teste</text>
-    <text x="402" y="790" class="s">58 checagens isolamento</text>
+    <text x="402" y="790" class="s">70 checagens isolamento</text>
 
     <rect x="562" y="746" width="150" height="62" rx="10" class="box"/>
     <text x="576" y="770" class="t" font-size="13">4. Revisão nova</text>

@@ -45,6 +45,7 @@ O JobSpark é a startup inscrita por **Idarlan Magalhães** (residente do CTE-IA
 | ✅ | LGPD — vídeo e currículo privados, exclusão pelo titular, política de privacidade | 18/10/2026 | Concluído |
 | ✅ | Planos e limites (Starter, Pro, Scale, Enterprise) | 18/10/2026 | Concluído |
 | ✅ | Serviço de ML ligado à API em produção | 18/10/2026 | Concluído |
+| ✅ | Entrevista com a Aria dentro do site e convite por WhatsApp (link ou código) | 18/10/2026 | Concluído |
 | ⏳ | Inscrição no edital | até 28/11/2026 | Em andamento |
 | ⏳ | Primeiras empresas piloto no Ceará | nov/2026 – jan/2027 | Em andamento |
 | 🔜 | Resultado final e confirmação de participação | 28–31/12/2026 | Aguardando |
@@ -67,7 +68,7 @@ O JobSpark é a startup inscrita por **Idarlan Magalhães** (residente do CTE-IA
 Em muitas pequenas e médias empresas, quem contrata é o próprio dono ou o gerente: lê dezenas de currículos parecidos, repete a mesma primeira entrevista e decide pela intuição. O JobSpark faz essa primeira entrevista com IA e entrega um dossiê com a evidência de cada nota.
 
 1. **Vaga com link e QR Code.** A empresa publica a vaga (com salário visível) e divulga o link ou o QR no cartaz, no Instagram ou no WhatsApp.
-2. **Entrevista com a Aria.** O candidato responde pelo celular, por texto ou áudio, sem precisar de currículo.
+2. **Entrevista com a Aria.** O candidato responde pelo celular, por texto ou áudio, sem precisar de currículo. Pelo link ou QR da vaga ela é o primeiro contato; para quem se candidatou pelo site, ela abre quando a empresa move a candidatura para "Entrevista", em Minhas candidaturas ou pelo convite enviado no WhatsApp.
 3. **Dossiê e decisão humana.** A empresa vê a conversa, a nota de triagem e o perfil DISC, e registra a avaliação na ficha do gestor. A IA ordena a fila, mas não reprova ninguém.
 4. **Contratação e admissão.** Ao marcar "Contratado", abre o checklist de documentos da admissão.
 5. **Banco de talentos.** Na próxima vaga, a empresa busca em linguagem natural entre quem já passou pelas vagas dela.
@@ -81,6 +82,16 @@ Em muitas pequenas e médias empresas, quem contrata é o próprio dono ou o ger
 | Candidato no celular | Entrevista pelo link ou QR |
 |---|---|
 | <img src="screenshots/home-celular.jpg" width="300" /> | <img src="screenshots/entrevista-celular.jpg" width="300" /> |
+
+### Entrevista dentro do fluxo do site
+
+Quando a empresa move a candidatura para **"Entrevista"**, o candidato vê o botão em **Minhas candidaturas** (também com conta Google). A empresa pode mandar o convite pelo WhatsApp: a mensagem leva um **link** que abre a entrevista direto e um **código** para digitar em `jobspark.com.br/entrevista`, válido por 7 dias.
+
+<img src="screenshots/whatsapp-convite.png" alt="Convite da entrevista pelo WhatsApp" width="100%" />
+
+| Minhas candidaturas | Código do convite | A entrevista aberta |
+|---|---|---|
+| <img src="screenshots/candidaturas-entrevista-celular.png" width="240" /> | <img src="screenshots/entrevista-codigo-celular.png" width="240" /> | <img src="screenshots/entrevista-logado-celular.png" width="240" /> |
 
 **Dossiê do candidato** — nota de 0 a 100 com pontos fortes, pontos de atenção e recomendação; a decisão fica na aba "Ficha do gestor".
 
@@ -142,7 +153,7 @@ flowchart LR
   API -.-> ID
 ```
 
-**Como uma mudança chega à produção:** commit com auditoria de segurança → push com testes → ensaio no banco de teste (58 checagens de isolamento entre empresas) → nova revisão no Cloud Run **sem tráfego** → ensaio da API nessa revisão → só então 100% do tráfego, com registro do deploy e plano de volta.
+**Como uma mudança chega à produção:** commit com auditoria de segurança → push com testes → ensaio no banco de teste (70 checagens de isolamento entre empresas) → nova revisão no Cloud Run **sem tráfego** → ensaio da API nessa revisão → só então 100% do tráfego, com registro do deploy e plano de volta.
 
 ---
 
@@ -176,9 +187,9 @@ Toda empresa nova começa no Starter e publica a primeira vaga sozinha.
 
 | Portão | O que faz |
 |---|---|
-| 73 testes automatizados | segurança, acesso à sessão, IA, planos, RH, arquivos, robustez |
+| 82 testes automatizados | segurança, acesso à sessão, IA, planos, RH, arquivos, robustez, entrevista e convite |
 | Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo da requisição e segredo no código |
-| Caça-falhas de isolamento | cria 2 empresas e 2 candidatos e prova, rota por rota, que um não alcança o outro (58 checagens) |
+| Caça-falhas de isolamento | cria 2 empresas e 2 candidatos e prova, rota por rota, que um não alcança o outro (70 checagens) |
 | Deploy com ensaio | revisão nova sem tráfego, ensaio da API, só então 100%; cada deploy registrado com plano de volta |
 | LGPD | vídeo e currículo em armazenamento privado, exclusão pelo titular, política com os papéis de controladora e operador |
 
