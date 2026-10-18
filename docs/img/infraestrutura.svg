@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 940" width="1200" height="940" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15140F"/>
+    </marker>
+    <marker id="setaL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FF5B1F"/>
+    </marker>
+    <style>
+      .t  { fill:#15140F; font-size:15px; font-weight:700; }
+      .s  { fill:#4A473F; font-size:12px; }
+      .m  { fill:#4A473F; font-size:11px; font-family: Consolas, Menlo, monospace; }
+      .h  { fill:#15140F; font-size:13px; font-weight:700; letter-spacing:1.5px; }
+      .box   { fill:#FFFFFF; stroke:#15140F; stroke-width:1.5; }
+      .boxL  { fill:#FFF1EA; stroke:#FF5B1F; stroke-width:1.8; }
+      .boxG  { fill:#EEF6EE; stroke:#2F7D45; stroke-width:1.5; }
+      .zona  { fill:none; stroke:#B9B3A3; stroke-width:1.2; stroke-dasharray:6 5; }
+      .linha { stroke:#15140F; stroke-width:1.4; fill:none; }
+      .linhaL{ stroke:#FF5B1F; stroke-width:1.6; fill:none; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="940" fill="#F5F2EA"/>
+
+  <!-- título -->
+  <text x="40" y="52" fill="#15140F" font-size="28" font-family="Georgia, 'Times New Roman', serif">Infraestrutura do JobSpark</text>
+  <text x="40" y="78" class="s">Produção em Google Cloud Run · atualizado em 18/10/2026 · código-fonte privado</text>
+  <circle cx="1140" cy="50" r="14" fill="#FF5B1F"/><circle cx="1140" cy="50" r="5" fill="#F5F2EA"/>
+
+  <!-- USUÁRIOS -->
+  <text x="40" y="128" class="h">USUÁRIOS</text>
+  <rect x="40" y="142" width="200" height="74" rx="12" class="box"/>
+  <text x="56" y="168" class="t">Candidato</text>
+  <text x="56" y="188" class="s">celular · link ou QR Code</text>
+  <text x="56" y="204" class="s">entrevista por texto ou voz</text>
+
+  <rect x="40" y="232" width="200" height="74" rx="12" class="box"/>
+  <text x="56" y="258" class="t">Empresa</text>
+  <text x="56" y="278" class="s">vagas · dossiê · ficha do gestor</text>
+  <text x="56" y="294" class="s">banco de talentos · RH</text>
+
+  <rect x="40" y="322" width="200" height="60" rx="12" class="box"/>
+  <text x="56" y="348" class="t">Super admin</text>
+  <text x="56" y="368" class="s">empresas · planos · cobrança</text>
+
+  <!-- DOMÍNIO -->
+  <rect x="300" y="222" width="170" height="64" rx="12" class="box"/>
+  <text x="316" y="248" class="t">jobspark.com.br</text>
+  <text x="316" y="268" class="s">HTTPS · domínio no Cloud Run</text>
+
+  <path d="M240 179 C270 179, 270 240, 298 246" class="linha" marker-end="url(#seta)"/>
+  <path d="M240 269 L298 258" class="linha" marker-end="url(#seta)"/>
+  <path d="M240 352 C270 352, 270 275, 298 268" class="linha" marker-end="url(#seta)"/>
+
+  <!-- GOOGLE CLOUD -->
+  <rect x="500" y="110" width="660" height="430" rx="18" class="zona"/>
+  <text x="520" y="136" class="h">GOOGLE CLOUD · projeto de produção</text>
+
+  <!-- frontend -->
+  <rect x="520" y="156" width="250" height="104" rx="12" class="box"/>
+  <text x="536" y="182" class="t">Frontend · Cloud Run</text>
+  <text x="536" y="202" class="s">Next.js 15 · React 19 · Tailwind v4</text>
+  <text x="536" y="220" class="s">responsivo, pensado para o celular</text>
+  <text x="536" y="244" class="m">jobspark-frontend · us-central1</text>
+  <path d="M470 254 L518 214" class="linha" marker-end="url(#seta)"/>
+
+  <!-- backend -->
+  <rect x="520" y="290" width="250" height="150" rx="12" class="boxL"/>
+  <text x="536" y="316" class="t">API · Cloud Run</text>
+  <text x="536" y="336" class="s">Hono + Bun · Prisma · REST /api/v1</text>
+  <text x="536" y="354" class="s">JWT · token de sessão (SHA-256)</text>
+  <text x="536" y="372" class="s">isolamento por empresa (tenant)</text>
+  <text x="536" y="390" class="s">limites de plano e de chamadas</text>
+  <text x="536" y="424" class="m">jobspark-backend · southamerica-east1</text>
+  <path d="M645 260 L645 288" class="linha" marker-end="url(#seta)"/>
+  <text x="652" y="279" class="m">HTTPS</text>
+
+  <!-- ml -->
+  <rect x="520" y="456" width="250" height="70" rx="12" class="box"/>
+  <text x="536" y="480" class="t">Serviço de ML · Cloud Run</text>
+  <text x="536" y="498" class="s">FastAPI · scikit-learn (aderência, salário)</text>
+  <text x="536" y="516" class="m">jobspark-ml · southamerica-east1</text>
+  <path d="M600 440 L600 454" class="linha" marker-end="url(#seta)"/>
+
+  <!-- storage -->
+  <rect x="810" y="156" width="330" height="86" rx="12" class="box"/>
+  <text x="826" y="182" class="t">Cloud Storage · bucket privado</text>
+  <text x="826" y="202" class="s">vídeo pitch e currículo · São Paulo</text>
+  <text x="826" y="220" class="s">sem link público: só sai por rota que confere o dono</text>
+  <path d="M770 330 C790 300, 790 230, 808 210" class="linha" marker-end="url(#seta)"/>
+
+  <!-- secrets -->
+  <rect x="810" y="262" width="330" height="64" rx="12" class="box"/>
+  <text x="826" y="288" class="t">Secret Manager</text>
+  <text x="826" y="308" class="s">chaves de IA, JWT e banco fora do código e da imagem</text>
+  <path d="M770 350 L808 302" class="linha" marker-end="url(#seta)"/>
+
+  <!-- build -->
+  <rect x="810" y="346" width="330" height="78" rx="12" class="box"/>
+  <text x="826" y="372" class="t">Cloud Build + Container Registry</text>
+  <text x="826" y="392" class="s">uma imagem por commit (tag = hash do commit)</text>
+  <text x="826" y="410" class="s">revisões imutáveis: voltar é trocar o tráfego</text>
+
+  <!-- identity -->
+  <rect x="810" y="444" width="330" height="70" rx="12" class="box"/>
+  <text x="826" y="470" class="t">Google Identity Services</text>
+  <text x="826" y="490" class="s">login com Google · projeto de OAuth separado</text>
+  <path d="M770 410 C790 430, 790 470, 808 476" class="linha" marker-end="url(#seta)"/>
+
+  <!-- DADOS E IA EXTERNOS -->
+  <text x="40" y="440" class="h">DADOS</text>
+  <rect x="40" y="454" width="420" height="90" rx="12" class="box"/>
+  <text x="56" y="480" class="t">Neon · PostgreSQL + pgvector</text>
+  <text x="56" y="500" class="s">vagas, entrevistas, fichas, admissões, planos</text>
+  <text x="56" y="518" class="s">embeddings de 768 dimensões para busca semântica</text>
+  <text x="56" y="534" class="s">migrations versionadas (Prisma) com diff zero após cada deploy</text>
+  <path d="M520 400 C490 420, 480 470, 462 490" class="linha" marker-end="url(#seta)"/>
+
+  <text x="40" y="584" class="h">INTELIGÊNCIA ARTIFICIAL</text>
+  <rect x="40" y="598" width="350" height="88" rx="12" class="boxL"/>
+  <text x="56" y="624" class="t">Groq</text>
+  <text x="56" y="644" class="s">LLM gpt-oss-120b: entrevistadora Aria e aderência</text>
+  <text x="56" y="662" class="s">Whisper large-v3: respostas por áudio</text>
+  <text x="56" y="678" class="m">timeout + nova tentativa + limite por plano</text>
+
+  <rect x="410" y="598" width="350" height="88" rx="12" class="boxL"/>
+  <text x="426" y="624" class="t">Google AI</text>
+  <text x="426" y="644" class="s">gemini-embedding-001 (768d)</text>
+  <text x="426" y="662" class="s">busca de vagas e banco de talentos</text>
+  <text x="426" y="678" class="m">fallback local determinístico</text>
+
+  <path d="M520 420 L490 420 L490 565 L215 565 L215 594" class="linhaL" marker-end="url(#setaL)"/>
+  <path d="M490 565 L585 565 L585 594" class="linhaL" marker-end="url(#setaL)"/>
+  <text x="498" y="556" class="m" fill="#FF5B1F">chamadas de IA</text>
+
+  <rect x="780" y="598" width="380" height="88" rx="12" class="boxG"/>
+  <text x="796" y="624" class="t">IA responsável</text>
+  <text x="796" y="644" class="s">a IA ordena e resume; a decisão é do gestor</text>
+  <text x="796" y="662" class="s">nota sem nome, foto, idade ou gênero · CPF mascarado</text>
+  <text x="796" y="678" class="s">exclusão de dados pelo próprio candidato (LGPD)</text>
+
+  <!-- PIPELINE -->
+  <text x="40" y="730" class="h">COMO UMA MUDANÇA CHEGA À PRODUÇÃO</text>
+  <g font-size="12">
+    <rect x="40"  y="746" width="150" height="62" rx="10" class="box"/>
+    <text x="54" y="770" class="t" font-size="13">1. Commit</text>
+    <text x="54" y="790" class="s">auditoria de segurança</text>
+
+    <rect x="214" y="746" width="150" height="62" rx="10" class="box"/>
+    <text x="228" y="770" class="t" font-size="13">2. Push</text>
+    <text x="228" y="790" class="s">73 testes + tipos</text>
+
+    <rect x="388" y="746" width="150" height="62" rx="10" class="box"/>
+    <text x="402" y="770" class="t" font-size="13">3. Banco de teste</text>
+    <text x="402" y="790" class="s">58 checagens isolamento</text>
+
+    <rect x="562" y="746" width="150" height="62" rx="10" class="box"/>
+    <text x="576" y="770" class="t" font-size="13">4. Revisão nova</text>
+    <text x="576" y="790" class="s">sem tráfego (tag teste)</text>
+
+    <rect x="736" y="746" width="150" height="62" rx="10" class="box"/>
+    <text x="750" y="770" class="t" font-size="13">5. Ensaio</text>
+    <text x="750" y="790" class="s">roteiro da API na revisão</text>
+
+    <rect x="910" y="746" width="250" height="62" rx="10" class="boxL"/>
+    <text x="924" y="770" class="t" font-size="13">6. 100% do tráfego</text>
+    <text x="924" y="790" class="s">registro do deploy + plano de volta</text>
+  </g>
+  <path d="M190 777 L212 777" class="linha" marker-end="url(#seta)"/>
+  <path d="M364 777 L386 777" class="linha" marker-end="url(#seta)"/>
+  <path d="M538 777 L560 777" class="linha" marker-end="url(#seta)"/>
+  <path d="M712 777 L734 777" class="linha" marker-end="url(#seta)"/>
+  <path d="M886 777 L908 777" class="linha" marker-end="url(#seta)"/>
+
+  <text x="40" y="850" class="s">Nada recebe tráfego antes de passar no ensaio. Se algo der errado, a revisão anterior volta a receber 100% do tráfego em segundos.</text>
+  <text x="40" y="870" class="s">Cada empresa é um tenant isolado: toda consulta filtra pela empresa do usuário logado, e um teste automático prova que a empresa B não alcança nada da A.</text>
+  <line x1="40" y1="896" x2="1160" y2="896" stroke="#D9D3C4"/>
+  <text x="40" y="918" class="s">JobSpark · Startup da Fase III · Residência em TIC 44 — CTE-IA (SiDi / Softex)</text>
+  <text x="1160" y="918" class="s" text-anchor="end">jobspark.com.br</text>
+</svg>
