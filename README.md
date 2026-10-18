@@ -20,7 +20,7 @@
 
 ## 📌 Sobre este repositório
 
-Esta é a **vitrine técnica** do JobSpark: o que o produto faz, como foi construído, a infraestrutura e a trilha da startup na Fase III. O **código-fonte é privado** para proteger a propriedade intelectual; o produto pode ser usado no ar em [jobspark.com.br](https://jobspark.com.br).
+Esta é a **vitrine técnica** do JobSpark: o que o produto faz, como foi construído, a infraestrutura e a trilha da startup na Fase III. A **[documentação técnica](docs/documentacao-tecnica.md)** detalha arquitetura, dados, fluxos, IA, segurança e testes. O **código-fonte é privado** para proteger a propriedade intelectual; o produto pode ser usado no ar em [jobspark.com.br](https://jobspark.com.br).
 
 ---
 
@@ -119,7 +119,7 @@ Quando a empresa move a candidatura para **"Entrevista"**, o candidato vê o bot
 
 <img src="docs/img/infraestrutura.png" alt="Infraestrutura do JobSpark" width="100%" />
 
-Versão vetorial: [docs/img/infraestrutura.svg](docs/img/infraestrutura.svg).
+Versão vetorial: [docs/img/infraestrutura.svg](docs/img/infraestrutura.svg). Detalhes em [docs/documentacao-tecnica.md](docs/documentacao-tecnica.md).
 
 ```mermaid
 flowchart LR
