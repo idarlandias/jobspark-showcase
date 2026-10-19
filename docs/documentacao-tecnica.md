@@ -61,7 +61,7 @@ Organizado em três camadas:
 
 **Autenticação**
 - Login por e-mail e senha (senha com hash) ou com Google (token validado no servidor).
-- JWT em cookie `httpOnly`.
+- Login de 24 h, conferido no banco a cada chamada: sair da conta cancela o login em todos os aparelhos.
 - Entrevista sem login: o candidato recebe um token opaco e o banco guarda só o hash.
 - Convite de entrevista: código de 8 caracteres, guardado só como hash, válido por 7 dias e de uso único (link encaminhado não abre a entrevista de outra pessoa).
 
@@ -200,7 +200,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 
 | Portão | O que garante |
 |---|---|
-| 119 testes automatizados | segurança, sessão, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
+| 126 testes automatizados | segurança, sessão, login cancelável, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
 | Checagem de tipos (TypeScript) | backend e frontend sem erro de tipo |
 | Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo e migration destrutiva |
 | Testes a cada push | auditoria, testes e tipos |
