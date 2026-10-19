@@ -46,6 +46,7 @@ O JobSpark é a startup inscrita por **Idarlan Magalhães** (residente do CTE-IA
 | ✅ | Planos e limites (Starter, Pro, Scale, Enterprise) | 18/10/2026 | Concluído |
 | ✅ | Serviço de ML ligado à API em produção | 18/10/2026 | Concluído |
 | ✅ | Entrevista com a Aria dentro do site e convite por WhatsApp (link ou código) | 18/10/2026 | Concluído |
+| ✅ | Revisão de segurança independente: 17 de 18 achados corrigidos (nota com evidência, login cancelável, convite de uso único, LGPD com retenção de 12 meses) | 19/10/2026 | Concluído |
 | ⏳ | Inscrição no edital | até 28/11/2026 | Em andamento |
 | ⏳ | Primeiras empresas piloto no Ceará | nov/2026 – jan/2027 | Em andamento |
 | 🔜 | Resultado final e confirmação de participação | 28–31/12/2026 | Aguardando |
@@ -85,7 +86,7 @@ Em muitas pequenas e médias empresas, quem contrata é o próprio dono ou o ger
 
 ### Entrevista dentro do fluxo do site
 
-Quando a empresa move a candidatura para **"Entrevista"**, o candidato vê o botão em **Minhas candidaturas** (também com conta Google). A empresa pode mandar o convite pelo WhatsApp: a mensagem leva um **link** que abre a entrevista direto e um **código** para digitar em `jobspark.com.br/entrevista`, válido por 7 dias.
+Quando a empresa move a candidatura para **"Entrevista"**, o candidato vê o botão em **Minhas candidaturas** (também com conta Google). A empresa pode mandar o convite pelo WhatsApp: a mensagem leva um **link** que abre a entrevista direto e um **código** para digitar em `jobspark.com.br/entrevista`, válido por 7 dias e de uso único (um link encaminhado não abre a entrevista de outra pessoa).
 
 <img src="screenshots/whatsapp-convite.png" alt="Convite da entrevista pelo WhatsApp" width="100%" />
 
@@ -93,7 +94,7 @@ Quando a empresa move a candidatura para **"Entrevista"**, o candidato vê o bot
 |---|---|---|
 | <img src="screenshots/candidaturas-entrevista-celular.png" width="240" /> | <img src="screenshots/entrevista-codigo-celular.png" width="240" /> | <img src="screenshots/entrevista-logado-celular.png" width="240" /> |
 
-**Dossiê do candidato** — nota de 0 a 100 com pontos fortes, pontos de atenção e recomendação; a decisão fica na aba "Ficha do gestor".
+**Dossiê do candidato**: nota de 0 a 100 que é a média das notas por requisito da vaga. Cada uma vem com a **citação literal** da entrevista que a comprova, ou com o selo "sem evidência". DISC, vídeo e áudio aparecem só como informação, e a decisão fica na aba "Ficha do gestor".
 
 <img src="screenshots/dossie.png" alt="Dossiê do candidato" width="100%" />
 
@@ -153,7 +154,7 @@ flowchart LR
   API -.-> ID
 ```
 
-**Como uma mudança chega à produção:** commit com auditoria de segurança → push com testes → ensaio no banco de teste (70 checagens de isolamento entre empresas) → nova revisão no Cloud Run **sem tráfego** → ensaio da API nessa revisão → só então 100% do tráfego, com registro do deploy e plano de volta.
+**Como uma mudança chega à produção:** commit com auditoria de segurança → push com testes → ensaio no banco de teste (100 checagens de isolamento, LGPD, login e uploads) → nova revisão no Cloud Run **sem tráfego** → ensaio da API nessa revisão → só então 100% do tráfego, com registro do deploy e plano de volta.
 
 ---
 
@@ -187,11 +188,12 @@ Toda empresa nova começa no Starter e publica a primeira vaga sozinha.
 
 | Portão | O que faz |
 |---|---|
-| 82 testes automatizados | segurança, acesso à sessão, IA, planos, RH, arquivos, robustez, entrevista e convite |
-| Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo da requisição e segredo no código |
-| Caça-falhas de isolamento | cria 2 empresas e 2 candidatos e prova, rota por rota, que um não alcança o outro (70 checagens) |
+| 137 testes automatizados | segurança, acesso à sessão, login cancelável, IA (nota com evidência, saída da Aria), erros internos, tipo de arquivo, retenção, planos, RH, arquivos, robustez, entrevista e convite |
+| Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo da requisição, segredo no código e arquivo `.env` no repositório |
+| Caça-falhas de isolamento | cria 2 empresas e 2 candidatos e prova, rota por rota, que um não alcança o outro (100 checagens) |
 | Deploy com ensaio | revisão nova sem tráfego, ensaio da API, só então 100%; cada deploy registrado com plano de volta |
-| LGPD | vídeo e currículo em armazenamento privado, exclusão pelo titular, política com os papéis de controladora e operador |
+| LGPD | vídeo e currículo em armazenamento privado, exclusão pelo titular, consentimento registrado, CPF só quando a vaga pede, entrevistas apagadas 12 meses após o encerramento da vaga |
+| Revisão de segurança (19/10/2026) | 17 de 18 achados de uma revisão independente corrigidos e em produção, cada um com teste que falhava antes da correção; o restante é guarda de senhas fora do código |
 
 ---
 

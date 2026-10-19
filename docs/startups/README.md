@@ -16,7 +16,7 @@
 | Critério do edital (peso) | Evidência no produto |
 |---|---|
 | Uso de IA (3) | Entrevistadora Aria (LLM), voz com Whisper, análise de aderência, embeddings + pgvector no banco de talentos, modelos scikit-learn |
-| Solução de TIC (2) | SaaS multi-tenant em nuvem, API, 82 testes, auditoria no commit, deploy com ensaio |
+| Solução de TIC (2) | SaaS multi-tenant em nuvem, API, 137 testes, auditoria no commit, deploy com ensaio |
 | Coerência (2) | Só afirma o que está no ar; o que falta aparece como meta; decisão humana registrada |
 | Mercado (2) | PMEs que contratam com frequência; planos para PME; TAM/SAM com fontes oficiais na Sprint 2 |
 | Time (1) | Produto construído e publicado pelo proponente |
@@ -31,7 +31,7 @@
 | RH | Banco de talentos, admissão digital, painel de indicadores | `/empresa/talentos`, `/empresa/rh` |
 | Negócio | Planos Starter, Pro, Scale e Enterprise com limites; cobrança manual pelo super admin | painel de vagas, `/admin` |
 | LGPD | Arquivos privados, exclusão pelo titular, política com os papéis de controladora e operador | `/privacidade`, `/termos` |
-| Segurança | Isolamento entre empresas provado por teste (70 checagens), limites de chamadas, segredos fora do código | portões automáticos de qualidade |
+| Segurança | Isolamento entre empresas provado por teste (100 checagens), revisão de segurança independente com 17 de 18 achados corrigidos (19/10/2026), limites de chamadas, segredos fora do código | portões automáticos de qualidade |
 
 ## Etapas e cronograma
 
