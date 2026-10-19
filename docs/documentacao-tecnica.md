@@ -191,7 +191,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 - **Segredos:** guardados num cofre da nuvem; uma verificação automática barra segredo no código.
 - **Dados guardados só como hash:** senhas, tokens de entrevista e códigos de convite.
 - **Arquivos:** vídeo e currículo em armazenamento privado, sem link público.
-- **Direitos do titular:** o candidato exclui a conta ou apaga uma entrevista a qualquer momento.
+- **Direitos do titular:** o candidato exclui a conta (o que apaga também as entrevistas dele), apaga uma entrevista ou cancela a candidatura (o que apaga a entrevista daquela vaga) a qualquer momento.
 - **Papéis:** a empresa é a controladora e o JobSpark é o operador.
 - **Decisão automatizada:** revisão humana registrada (art. 20 da LGPD).
 - **Minimização:** a admissão guarda só o status dos documentos, e o CPF é sempre mascarado.
