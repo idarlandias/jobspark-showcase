@@ -195,14 +195,16 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 - **Direitos do titular:** o candidato exclui a conta (o que apaga também as entrevistas dele), apaga uma entrevista ou cancela a candidatura (o que apaga a entrevista daquela vaga) a qualquer momento.
 - **Papéis:** a empresa é a controladora e o JobSpark é o operador.
 - **Decisão automatizada:** revisão humana registrada (art. 20 da LGPD).
-- **Minimização:** a admissão guarda só o status dos documentos, e o CPF é sempre mascarado.
+- **Minimização:** a admissão guarda só o status dos documentos, e o CPF é sempre mascarado e só é pedido quando a vaga exige verificação de antecedentes.
+- **Consentimento registrado:** o início da entrevista grava a data e a versão da Política de Privacidade.
+- **Retenção:** as entrevistas de vagas encerradas há mais de 12 meses são apagadas automaticamente.
 - **Transferência internacional:** informada na Política de Privacidade.
 
 ## 11. Qualidade e testes
 
 | Portão | O que garante |
 |---|---|
-| 133 testes automatizados | segurança, sessão, login cancelável, erros internos, tipo de arquivo, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
+| 137 testes automatizados | segurança, sessão, login cancelável, erros internos, tipo de arquivo, retenção, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
 | Checagem de tipos (TypeScript) | backend e frontend sem erro de tipo |
 | Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo e migration destrutiva |
 | Testes a cada push | auditoria, testes e tipos |
