@@ -63,7 +63,7 @@ Organizado em três camadas:
 - Login por e-mail e senha (senha com hash) ou com Google (token validado no servidor).
 - JWT em cookie `httpOnly`.
 - Entrevista sem login: o candidato recebe um token opaco e o banco guarda só o hash.
-- Convite de entrevista: código de 8 caracteres, guardado só como hash e válido por 7 dias.
+- Convite de entrevista: código de 8 caracteres, guardado só como hash, válido por 7 dias e de uso único (link encaminhado não abre a entrevista de outra pessoa).
 
 **Autorização:** uma sessão de entrevista só é aberta pelo próprio candidato (token), pela empresa dona da vaga ou pelo super admin. Para quem não pode ver, a resposta é "não encontrado", sem revelar que o registro existe.
 
@@ -121,7 +121,7 @@ REST em `/api/v1`, com erros em português no formato `{ error, code }`.
 1. Na etapa "Entrevista", a empresa gera um convite.
 2. A mensagem do WhatsApp sai com um link que abre a entrevista direto e com um código para digitar em `/entrevista`.
 3. O link e o código são escritos pelo sistema, não pela IA.
-4. Link e código abrem a mesma entrevista do fluxo 7.2.
+4. Link e código abrem a mesma entrevista do fluxo 7.2 uma vez só. No mesmo aparelho, reabrir o link retoma a conversa; em outro, o candidato continua por "Minhas candidaturas" ou recebe um novo convite.
 
 **7.4 Dossiê e nota com evidência:**
 - Cada requisito da vaga recebe nota de 1 a 5 com a citação literal da resposta do candidato.
