@@ -187,7 +187,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 ## 10. Segurança e LGPD
 
 - **Isolamento:** isolamento entre empresas comprovado por teste automático a cada mudança.
-- **Segredos:** guardados num cofre da nuvem; uma verificação automática barra segredo no código.
+- **Segredos:** guardados num cofre da nuvem; uma verificação automática barra segredo no código e qualquer arquivo de ambiente (.env) no repositório.
 - **Dados guardados só como hash:** senhas, tokens de entrevista e códigos de convite.
 - **Arquivos conferidos pelo conteúdo:** currículo só PDF de verdade e vídeo só WebM, MP4 ou MOV, verificados pelos bytes.
 - **Erros internos só no log:** o usuário recebe uma mensagem em português, sem detalhes do banco ou do servidor.
@@ -206,7 +206,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 |---|---|
 | 137 testes automatizados | segurança, sessão, login cancelável, erros internos, tipo de arquivo, retenção, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
 | Checagem de tipos (TypeScript) | backend e frontend sem erro de tipo |
-| Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo e migration destrutiva |
+| Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo, arquivo .env versionado e migration destrutiva |
 | Testes a cada push | auditoria, testes e tipos |
 | Caça-falhas de isolamento | 2 empresas e 2 candidatos novos num banco de teste; 71 checagens |
 | Ensaio da API | roteiro contra a versão nova antes de liberar o tráfego e contra a produção depois |
