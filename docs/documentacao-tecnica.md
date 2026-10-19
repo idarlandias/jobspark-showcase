@@ -160,7 +160,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 
 | Componente | Detalhe |
 |---|---|
-| Aria | entrevista guiada pela descrição da vaga; responde dúvidas só com os dados oficiais da vaga; encerra depois de cerca de 4 turnos bem-sucedidos |
+| Aria | entrevista guiada pela descrição da vaga; responde dúvidas só com os dados oficiais da vaga; encerra depois de cerca de 4 turnos bem-sucedidos; não aceita ordens do candidato, não promete aprovação nem contratação e não encerra antes de 4 respostas |
 | Aderência | nota, competências compatíveis e faltantes, sugestões; perfil incompleto não recebe veredito |
 | Áudio | transcrição com Whisper large-v3 |
 | Busca semântica | embeddings de 768 dimensões em vagas, entrevistas e candidaturas |
@@ -200,7 +200,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 
 | Portão | O que garante |
 |---|---|
-| 110 testes automatizados | segurança, sessão, IA, nota com evidência, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
+| 119 testes automatizados | segurança, sessão, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
 | Checagem de tipos (TypeScript) | backend e frontend sem erro de tipo |
 | Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo e migration destrutiva |
 | Testes a cada push | auditoria, testes e tipos |
