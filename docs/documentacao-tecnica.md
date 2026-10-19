@@ -189,6 +189,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 - **Isolamento:** isolamento entre empresas comprovado por teste automático a cada mudança.
 - **Segredos:** guardados num cofre da nuvem; uma verificação automática barra segredo no código.
 - **Dados guardados só como hash:** senhas, tokens de entrevista e códigos de convite.
+- **Erros internos só no log:** o usuário recebe uma mensagem em português, sem detalhes do banco ou do servidor.
 - **Arquivos:** vídeo e currículo em armazenamento privado, sem link público.
 - **Direitos do titular:** o candidato exclui a conta (o que apaga também as entrevistas dele), apaga uma entrevista ou cancela a candidatura (o que apaga a entrevista daquela vaga) a qualquer momento.
 - **Papéis:** a empresa é a controladora e o JobSpark é o operador.
@@ -200,7 +201,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 
 | Portão | O que garante |
 |---|---|
-| 126 testes automatizados | segurança, sessão, login cancelável, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
+| 128 testes automatizados | segurança, sessão, login cancelável, erros internos, IA, nota com evidência, saída da Aria, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
 | Checagem de tipos (TypeScript) | backend e frontend sem erro de tipo |
 | Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo e migration destrutiva |
 | Testes a cada push | auditoria, testes e tipos |
