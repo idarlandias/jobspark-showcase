@@ -153,7 +153,7 @@ REST em `/api/v1`, com erros em português no formato `{ error, code }`.
 | Scale | ilimitadas | 1.000 |
 | Enterprise | sob contrato | sob contrato |
 
-O bloqueio acontece ao publicar uma vaga e ao abrir uma entrevista nova. A cobrança é manual, pelo super admin.
+O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cota na primeira resposta do candidato: abrir o link não consome cota, e entrevistas em andamento seguem até o fim. A cobrança é manual, pelo super admin.
 
 **7.9 Banco de talentos:** busca por significado (pgvector) só entre pessoas que passaram pelas vagas da própria empresa.
 
