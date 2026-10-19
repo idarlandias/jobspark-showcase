@@ -69,7 +69,7 @@ Em muitas pequenas e médias empresas, quem contrata é o próprio dono ou o ger
 
 1. **Vaga com link e QR Code.** A empresa publica a vaga (com salário visível) e divulga o link ou o QR no cartaz, no Instagram ou no WhatsApp.
 2. **Entrevista com a Aria.** O candidato responde pelo celular, por texto ou áudio, sem precisar de currículo. Pelo link ou QR da vaga ela é o primeiro contato; para quem se candidatou pelo site, ela abre quando a empresa move a candidatura para "Entrevista", em Minhas candidaturas ou pelo convite enviado no WhatsApp.
-3. **Dossiê e decisão humana.** A empresa vê a conversa, a nota de triagem e o perfil DISC, e registra a avaliação na ficha do gestor. A IA ordena a fila, mas não reprova ninguém.
+3. **Dossiê e decisão humana.** A empresa vê a conversa, a nota por requisito com a citação da entrevista e o perfil DISC (só informativo), e registra a avaliação na ficha do gestor. A IA ordena a fila, mas não reprova ninguém.
 4. **Contratação e admissão.** Ao marcar "Contratado", abre o checklist de documentos da admissão.
 5. **Banco de talentos.** Na próxima vaga, a empresa busca em linguagem natural entre quem já passou pelas vagas dela.
 

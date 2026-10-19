@@ -57,7 +57,7 @@ O JobSpark é um SaaS multiempresa de recrutamento para pequenas e médias empre
 Organizado em três camadas:
 - **rotas:** HTTP, autenticação e o filtro da empresa escritos na própria rota, para a auditoria automática conferir;
 - **regras puras:** planos, admissão, painel, entrevista, aderência, ficha do gestor, banco de talentos, testadas isoladamente;
-- **serviços:** agente da Aria, score 360°, DISC e verificação de antecedentes (demonstração).
+- **serviços:** agente da Aria, nota com evidência, DISC e verificação de antecedentes (demonstração).
 
 **Autenticação**
 - Login por e-mail e senha (senha com hash) ou com Google (token validado no servidor).
@@ -82,7 +82,7 @@ Organizado em três camadas:
 | Candidatura | etapas: enviada → triagem → visualizada → selecionada → entrevista → proposta → contratado / recusado; nota de aderência; convite de entrevista |
 | Sessão de entrevista | conversa com a Aria, vídeo, embedding das respostas; ligada ao candidato quando vem de uma candidatura |
 | Mensagem | texto, áudio transcrito ou vídeo |
-| DISC, antecedentes, score 360° | resultados ligados à sessão |
+| DISC, antecedentes, nota da entrevista | resultados ligados à sessão |
 | Ficha do gestor | nota de 1 a 5 por requisito e recomendação (avançar, talvez, não avançar), uma por gestor |
 | Admissão | checklist da CLT (só o status de cada documento), data de início, conclusão |
 
@@ -110,7 +110,7 @@ REST em `/api/v1`, com erros em português no formato `{ error, code }`.
 1. O QR leva para a página da vaga.
 2. O candidato informa nome e WhatsApp, e a Aria abre a conversa.
 3. As respostas por texto ou áudio vão para o agente, até a entrevista ser concluída.
-4. Ao concluir, o score 360° é calculado.
+4. Ao concluir, a nota com evidência é calculada.
 
 **7.2 Candidatura pelo site**
 1. O candidato logado se candidata e recebe a análise de aderência.
@@ -123,14 +123,13 @@ REST em `/api/v1`, com erros em português no formato `{ error, code }`.
 3. O link e o código são escritos pelo sistema, não pela IA.
 4. Link e código abrem a mesma entrevista do fluxo 7.2.
 
-**7.4 Dossiê e score 360°:** a nota é a média ponderada de quatro partes. A parte de compliance fica fora da conta enquanto a verificação for demonstrativa, e os pesos das outras partes são redistribuídos.
-
-| Parte | Peso |
-|---|---|
-| Técnico | 40% |
-| Comportamental | 25% |
-| Compliance | 20% |
-| Apresentação | 15% |
+**7.4 Dossiê e nota com evidência:**
+- Cada requisito da vaga recebe nota de 1 a 5 com a citação literal da resposta do candidato.
+- O sistema confere a citação na conversa; sem citação, o requisito fica "sem evidência" e vale 1.
+- Citar o nome de uma competência sem contar uma experiência vale no máximo 2.
+- A nota final é a média dos requisitos (0 a 100).
+- Áudio, vídeo, DISC e antecedentes aparecem só como informação e não dão pontos.
+- Só a empresa dona da vaga pede o recálculo; o candidato não.
 
 **7.5 Ficha do gestor:** a decisão humana registrada, com nota por requisito da vaga e recomendação. É a base para medir a concordância entre a IA e o gestor.
 
@@ -201,7 +200,7 @@ O bloqueio de vagas acontece ao publicar uma vaga. A entrevista só conta na cot
 
 | Portão | O que garante |
 |---|---|
-| 82 testes automatizados | segurança, sessão, IA, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
+| 110 testes automatizados | segurança, sessão, IA, nota com evidência, planos, RH, arquivos, robustez, entrevista e convite; nunca usam o banco real |
 | Checagem de tipos (TypeScript) | backend e frontend sem erro de tipo |
 | Auditoria a cada commit | barra rota sem autenticação, rota sem checagem de dono, empresa vinda do corpo, segredo e migration destrutiva |
 | Testes a cada push | auditoria, testes e tipos |
